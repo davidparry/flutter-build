@@ -50,4 +50,12 @@ RUN mkdir -p ${FLUTTER_HOME} && \
 ENV PATH=$PATH:$FLUTTER_HOME/bin
 
 RUN flutter doctor
-RUN echo 'Done instaling Flutter ready to build'
+
+# Using Debian, as root
+RUN curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
+RUN apt-get install -y nodejs
+
+RUN npm install -g typescript
+
+
+RUN echo 'Done instaling Flutter, Node  ready to build'
