@@ -42,7 +42,7 @@ RUN mkdir -p /root/.android/ && touch /root/.android/repositories.cfg && \
 ENV FLUTTER_HOME "/opt/flutter"
 ENV FLUTTER_VERSION "2.8.1-stable"
 RUN mkdir -p ${FLUTTER_HOME} && \
-  curl -L http://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}.tar.xz -o /tmp/flutter.tar.xz --progress-bar && \
+  curl -L http://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}.tar.xz -o /tmp/flutter.tar.xz --progress-bar && \
   tar xf /tmp/flutter.tar.xz -C /tmp && \
   mv /tmp/flutter/ -T ${FLUTTER_HOME} && \
   rm -rf /tmp/flutter.tar.xz
